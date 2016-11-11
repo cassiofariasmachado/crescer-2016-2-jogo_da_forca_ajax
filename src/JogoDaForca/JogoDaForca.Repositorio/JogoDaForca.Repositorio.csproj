@@ -49,11 +49,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContextoDeDados.cs" />
+    <Compile Include="Migrations\201611111932307_Initial.cs" />
+    <Compile Include="Migrations\201611111932307_Initial.Designer.cs">
+      <DependentUpon>201611111932307_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JogoDaForcaDominio\JogoDaForca.Dominio.csproj">
+      <Project>{3891d38d-c2ff-4f87-9154-efb5fb21f5b5}</Project>
+      <Name>JogoDaForca.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611111932307_Initial.resx">
+      <DependentUpon>201611111932307_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

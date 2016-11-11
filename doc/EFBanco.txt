@@ -1,0 +1,12 @@
+Escolher o projeto no console manager do nuget 
+Instalar no projeto principal e no repositorio
+Install-Package EntityFramework
+Uninstall-Package EntityFramework
+DatabaseContext herda DbContext
+Comando Enable-Migrations para poder usar o banco
+Add-Migration "Initial" para criar um 
+Update-Database -script
+Nao excluir a tabela do EF
+Ir no database override no onmodelCreating para tirar o "s" do nome das tabelas
+
+cascadeDelete para false

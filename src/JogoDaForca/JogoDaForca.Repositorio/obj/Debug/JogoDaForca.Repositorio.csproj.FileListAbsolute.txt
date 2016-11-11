@@ -1,0 +1,14 @@
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\bin\Debug\JogoDaForca.Repositorio.dll.config
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\bin\Debug\JogoDaForca.Repositorio.dll
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\bin\Debug\JogoDaForca.Repositorio.pdb
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\bin\Debug\EntityFramework.dll
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\bin\Debug\EntityFramework.xml
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\obj\Debug\JogoDaForca.Repositorio.csprojResolveAssemblyReference.cache
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\obj\Debug\JogoDaForca.Repositorio.dll
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\obj\Debug\JogoDaForca.Repositorio.pdb
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\bin\Debug\JogoDaForcaDominio.dll
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\bin\Debug\JogoDaForcaDominio.pdb
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\obj\Debug\JogoDaForca.Repositorio.Migrations.Initial.resources
+C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForca.Repositorio\obj\Debug\JogoDaForca.Repositorio.csproj.GenerateResource.Cache
