@@ -1,5 +1,0 @@
-C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForcaDominio\bin\Debug\JogoDaForcaDominio.dll
-C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForcaDominio\bin\Debug\JogoDaForcaDominio.pdb
-C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForcaDominio\obj\Debug\JogoDaForca.Dominio.csprojResolveAssemblyReference.cache
-C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForcaDominio\obj\Debug\JogoDaForcaDominio.dll
-C:\Users\rosa.gabriel\Documents\RepositorioDoTrabalhoAjax\jogo_da_forca_ajax\src\JogoDaForca\JogoDaForcaDominio\obj\Debug\JogoDaForcaDominio.pdb
