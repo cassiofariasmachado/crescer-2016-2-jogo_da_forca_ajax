@@ -195,6 +195,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\jogoDaForca.js" />
+    <Content Include="Scripts\app\palavras.js" />
     <Content Include="Scripts\app\telaInicial.js" />
     <Content Include="Scripts\app\telaPrincipal.js" />
     <Content Include="Scripts\app\_start.js" />

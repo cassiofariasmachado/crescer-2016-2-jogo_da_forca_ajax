@@ -31,7 +31,8 @@ namespace JogoDaForca
                       "~/Scripts/app/_start.js",
                       "~/Scripts/app/jogoDaForca.js",
                       "~/Scripts/app/telaInicial.js",
-                      "~/Scripts/app/telaPrincipal.js"));
+                      "~/Scripts/app/telaPrincipal.js",
+                      "~/Scripts/app/palavras.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
