@@ -1,6 +1,7 @@
 ﻿using JogoDaForca.Infraestrutura;
 using JogoDaForca.Repositorio;
 using JogoDaForcaDominio;
+using JogoDaForcaDominio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,11 @@ namespace JogoDaForca.Servicos
                     new ServicoDeCriptografia());
 
             return usuarioServico;
+        }
+
+        public static IPalavraRepositorio MontarPalavraRepositorio()
+        {
+            return new PalavraRepositorio();
         }
     }
 }
