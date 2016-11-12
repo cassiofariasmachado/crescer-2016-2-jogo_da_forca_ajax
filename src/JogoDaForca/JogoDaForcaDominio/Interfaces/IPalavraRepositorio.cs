@@ -9,5 +9,6 @@ namespace JogoDaForcaDominio.Interfaces
     public interface IPalavraRepositorio
     {
         Palavra GetPalavraPorId(int id);
+        Palavra GetPalavraAleatoria();
     }
 }

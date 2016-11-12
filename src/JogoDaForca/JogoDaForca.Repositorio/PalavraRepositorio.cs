@@ -17,5 +17,13 @@ namespace JogoDaForca.Repositorio
                 return context.Palavra.FirstOrDefault(p => p.Id==id);
             }
         }
+
+        public Palavra GetPalavraAleatoria()
+        {
+            using (var context = new ContextoDeDados())
+            {
+                return context.Palavra.OrderBy(o => Guid.NewGuid()).First();
+            }
+        }
     }
 }
