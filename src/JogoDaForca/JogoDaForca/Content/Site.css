@@ -15,3 +15,34 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.tela-centralizada {
+  /* Flex */
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Fim-do-flex */
+}
+
+.formulario-centralizado {
+  text-align: center;
+}
+
+.formulario-centralizado--top {
+  align-self: flex-start;
+}
+
+.formulario-centralizado--bottom {
+  align-self: flex-end;
+}
+
+#tela-inicial {
+    margin: 100px;
+}
