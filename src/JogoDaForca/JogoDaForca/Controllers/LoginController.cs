@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace JogoDaForca.Controllers
 {
-    public class LoginControllerController : Controller
+    public class LoginController : Controller
     {
         public ActionResult Index()
         {
@@ -19,7 +19,16 @@ namespace JogoDaForca.Controllers
 
             Usuario usuario = usuarioServico.BuscarPorAutenticacao(nome, senha);
 
-            return null;
+            if (usuario == null)
+            {
+                ViewBag.MessagemErroLogin = "Senha ou Nome está errado!";
+                return View("Index");
+            }
+
+            Usuario usuarioLogado = new Usuario();
+            ServicoDeAutenticacao.Autenticar(usuarioLogado);
+
+            return RedirectToAction("Index","Home");
         }
     }
 }
