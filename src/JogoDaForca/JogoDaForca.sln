@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JogoDaForca.Dominio", "Jogo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JogoDaForca.Repositorio", "JogoDaForca.Repositorio\JogoDaForca.Repositorio.csproj", "{36EEC429-65AC-476A-8442-787826B79A6C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Infraestrutura", "4-Infraestrutura", "{6A715ECC-7DA2-4DF2-84A0-590A5AF0D741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JogoDaForca.Infraestrutura", "JogoDaForca.Infraestrutura\JogoDaForca.Infraestrutura.csproj", "{8D47CD27-0BD3-4C6F-B7A7-001C553CFBF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{36EEC429-65AC-476A-8442-787826B79A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36EEC429-65AC-476A-8442-787826B79A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36EEC429-65AC-476A-8442-787826B79A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D47CD27-0BD3-4C6F-B7A7-001C553CFBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D47CD27-0BD3-4C6F-B7A7-001C553CFBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D47CD27-0BD3-4C6F-B7A7-001C553CFBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D47CD27-0BD3-4C6F-B7A7-001C553CFBF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +49,6 @@ Global
 		{E28EA621-EE52-4D3B-ACB7-B00F3B04BD19} = {2508FEE8-10D9-44E9-B31A-9AC98CDF70B1}
 		{3891D38D-C2FF-4F87-9154-EFB5FB21F5B5} = {F86C86AE-E752-4467-9DAB-D4CF1899A8D4}
 		{36EEC429-65AC-476A-8442-787826B79A6C} = {50FA3D3C-3D33-4900-A8EF-2FB833F2486A}
+		{8D47CD27-0BD3-4C6F-B7A7-001C553CFBF0} = {6A715ECC-7DA2-4DF2-84A0-590A5AF0D741}
 	EndGlobalSection
 EndGlobal
