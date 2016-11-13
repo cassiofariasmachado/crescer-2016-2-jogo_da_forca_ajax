@@ -9,7 +9,7 @@ jogoDaForca.renderizarTela = function (nome) {
 
   switch (nome) {
     case 'principal':
-      new TelaPrincipal('#tela-principal');
+      new TelaPrincipal('#tela-principal', this);
       break;
     case 'inicial':
       new TelaInicial('#tela-inicial');
@@ -46,3 +46,51 @@ jogoDaForca.render = function (viewElementSelector, templateName, data) {
 jogoDaForca.iniciar = function () {
   return jogoDaForca.renderizarTela('inicial');
 };
+
+jogoDaForca.gerarPalavraCriptografada = function (tamanho) {
+  let palavraCriptografada = '';
+  for (let i = 0, len = tamanho; i < len; i++) {
+    palavraCriptografada += '-';
+  }
+  return palavraCriptografada;
+}
+
+jogoDaForca.substituirLetra = function (palavra, palavraCriptografada, letra) {
+  for (let i = 0, len = palavra.length; i < len; i++) {
+    if (palavra[i].toLocaleUpperCase() === letra.toLocaleUpperCase()) {
+      palavraCriptografada = palavraCriptografada.replaceAt(i, letra.toLocaleUpperCase());
+    }
+  }
+  return palavraCriptografada;
+}
+
+jogoDaForca.atualizarPalavra = function (novaPalavra) {
+  $('#palavra').text(novaPalavra)
+}
+
+jogoDaForca.atualizarTentativas = function (tentativa) {
+  $('#tentativa').text(tentativa)
+}
+
+jogoDaForca.iniciarJogo = function () {
+  let palavras = new Palavras();
+  palavras.pegarPalavraAleatoria().done(
+    res => {
+      let palavra = res.vocabulo;
+      let palavraCriptografada = jogoDaForca.gerarPalavraCriptografada(palavra.length);
+      let tentativa = 0;
+      jogoDaForca.atualizarPalavra(palavraCriptografada);
+      jogoDaForca.atualizarTentativas(tentativa);
+      let letra = $("#letra").keydown(function (event) {
+        if (event.keyCode > 64 && event.keyCode < 91) {
+          palavraCriptografada = jogoDaForca.substituirLetra(palavra, palavraCriptografada, event.key);
+          tentativa++;
+          jogoDaForca.atualizarPalavra(palavraCriptografada);
+          jogoDaForca.atualizarTentativas(tentativa);
+        }
+      });
+
+
+    }
+  );
+}
