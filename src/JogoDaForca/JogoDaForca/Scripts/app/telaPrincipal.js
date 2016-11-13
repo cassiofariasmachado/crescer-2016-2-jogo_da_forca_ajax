@@ -1,12 +1,14 @@
 ﻿class TelaPrincipal {
-
+  
   constructor(seletor) {
     this.$elem = $(seletor);
+    this.registrarBindsEventos();
     this.renderizarEstadoInicial();
+    jogoDaForca.iniciarJogo();
   }
 
-  registrarBindsEventos(self) {
-
+  registrarBindsEventos() {
+    this.$palavra = $('#palavra');
   }
 
   renderizarEstadoInicial() {
