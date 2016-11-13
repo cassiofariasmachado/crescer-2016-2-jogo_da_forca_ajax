@@ -1,5 +1,5 @@
-﻿using JogoDaForca.Servicos;
-using JogoDaForcaDominio;
+﻿using JogoDaForca.Dominio;
+using JogoDaForca.Servicos;
 using System.Web.Mvc;
 
 namespace JogoDaForca.Controllers

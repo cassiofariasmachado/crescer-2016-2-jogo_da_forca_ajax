@@ -1,11 +1,7 @@
 ﻿using JogoDaForca.Infraestrutura;
 using JogoDaForca.Repositorio;
-using JogoDaForcaDominio;
-using JogoDaForcaDominio.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using JogoDaForca.Dominio.Interfaces;
+using JogoDaForca.Dominio;
 
 namespace JogoDaForca.Servicos
 {

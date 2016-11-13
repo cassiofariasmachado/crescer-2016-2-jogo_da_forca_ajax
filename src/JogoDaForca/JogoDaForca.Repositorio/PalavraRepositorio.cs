@@ -1,10 +1,8 @@
-﻿using JogoDaForcaDominio.Interfaces;
+﻿using JogoDaForca.Dominio;
+using JogoDaForca.Dominio.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using JogoDaForcaDominio;
+
 
 namespace JogoDaForca.Repositorio
 {

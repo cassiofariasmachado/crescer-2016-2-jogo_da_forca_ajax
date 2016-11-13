@@ -1,4 +1,4 @@
-﻿using JogoDaForcaDominio.Interfaces;
+﻿using JogoDaForca.Dominio.Interfaces;
 using System.Security.Cryptography;
 using System.Text;
 

@@ -1,12 +1,8 @@
 namespace JogoDaForca.Repositorio.Migrations
 {
-    using JogoDaForcaDominio;
-    using System;
-    using System.Collections;
+    using Dominio;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<JogoDaForca.Repositorio.ContextoDeDados>
     {

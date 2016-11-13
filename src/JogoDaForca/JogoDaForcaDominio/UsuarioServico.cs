@@ -1,6 +1,7 @@
-﻿using JogoDaForcaDominio.Interfaces;
+﻿using JogoDaForca.Dominio;
+using JogoDaForca.Dominio.Interfaces;
 
-namespace JogoDaForcaDominio
+namespace JogoDaForca.Dominio
 {
     public class UsuarioServico
     {

@@ -1,7 +1,4 @@
-﻿using JogoDaForcaDominio;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using JogoDaForca.Dominio;
 using System.Web;
 
 namespace JogoDaForca.Servicos

@@ -1,4 +1,4 @@
-﻿using JogoDaForcaDominio;
+﻿using JogoDaForca.Dominio;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 

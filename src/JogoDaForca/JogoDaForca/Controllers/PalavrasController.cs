@@ -8,10 +8,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using JogoDaForca.Repositorio;
-using JogoDaForcaDominio;
-using JogoDaForcaDominio.Interfaces;
 using JogoDaForca.Servicos;
+using JogoDaForca.Dominio.Interfaces;
+using JogoDaForca.Dominio;
 
 namespace JogoDaForca.Controllers
 {

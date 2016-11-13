@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JogoDaForcaDominio.Interfaces
+namespace JogoDaForca.Dominio.Interfaces
 {
     public interface IServicoDeCriptografia
     {
