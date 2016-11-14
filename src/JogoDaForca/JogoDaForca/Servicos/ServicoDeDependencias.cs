@@ -21,5 +21,10 @@ namespace JogoDaForca.Servicos
         {
             return new PalavraRepositorio();
         }
+
+        public static IUsuarioRepositorio MontarUsuarioRepositorio()
+        {
+            return new UsuarioRepositorio();
+        }
     }
 }
