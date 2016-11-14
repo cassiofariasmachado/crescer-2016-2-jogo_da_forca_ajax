@@ -33,6 +33,7 @@ namespace JogoDaForca
                       "~/Scripts/app/telaInicial.js",
                       "~/Scripts/app/telaPrincipal.js",
                       "~/Scripts/app/palavras.js",
+                      "~/Scripts/app/usuarios.js",
                       "~/Scripts/app/stringExtents.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
