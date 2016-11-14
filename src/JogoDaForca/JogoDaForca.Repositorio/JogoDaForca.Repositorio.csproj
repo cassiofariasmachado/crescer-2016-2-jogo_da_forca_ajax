@@ -54,6 +54,14 @@
     <Compile Include="Migrations\201611111932307_Initial.Designer.cs">
       <DependentUpon>201611111932307_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611141750339_adicionar modo.cs" />
+    <Compile Include="Migrations\201611141750339_adicionar modo.Designer.cs">
+      <DependentUpon>201611141750339_adicionar modo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611141800323_retirar senha.cs" />
+    <Compile Include="Migrations\201611141800323_retirar senha.Designer.cs">
+      <DependentUpon>201611141800323_retirar senha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PalavraRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +80,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611111932307_Initial.resx">
       <DependentUpon>201611111932307_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141750339_adicionar modo.resx">
+      <DependentUpon>201611141750339_adicionar modo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141800323_retirar senha.resx">
+      <DependentUpon>201611141800323_retirar senha.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

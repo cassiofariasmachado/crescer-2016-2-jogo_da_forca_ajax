@@ -225,6 +225,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Static\Templates\leaderboard.tpl.html" />
     <Content Include="Static\Templates\tela-principal.tpl.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -253,10 +254,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JogoDaForca.Infraestrutura\JogoDaForca.Infraestrutura.csproj">
-      <Project>{8d47cd27-0bd3-4c6f-b7a7-001c553cfbf0}</Project>
-      <Name>JogoDaForca.Infraestrutura</Name>
-    </ProjectReference>
     <ProjectReference Include="..\JogoDaForca.Repositorio\JogoDaForca.Repositorio.csproj">
       <Project>{36eec429-65ac-476a-8442-787826b79a6c}</Project>
       <Name>JogoDaForca.Repositorio</Name>
