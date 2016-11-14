@@ -82,7 +82,7 @@ jogoDaForca.atualizarTentativasErradas = function (tentativasErradas) {
 
 jogoDaForca.iniciarJogo = function () {
   let palavras = new Palavras();
-  palavras.pegarPalavraAleatoria().done(
+  palavras.pegarPalavraAleatoria().then(
     res => {
       let palavra = res.vocabulo.toLocaleUpperCase();
       let palavraCriptografada = jogoDaForca.gerarPalavraCriptografada(palavra.length);
@@ -107,9 +107,11 @@ jogoDaForca.iniciarJogo = function () {
           }
           tentativas++;
           jogoDaForca.atualizarTentativas(tentativas);
+
           if (tentativasErradas > 5) {
             return 'Game over';
           }
+
           if(!palavraCriptografada.contains('-')){
             pontuacao++;
             return 'Rodada completa'

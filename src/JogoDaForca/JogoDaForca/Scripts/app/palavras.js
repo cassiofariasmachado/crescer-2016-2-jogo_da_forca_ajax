@@ -1,7 +1,9 @@
 ﻿class Palavras {
 
   pegarPalavraAleatoria() {
-    return new $.get('api/palavras');
+    return new Promise(
+      (resolve, reject) => resolve($.get('api/palavras'))
+    );
   }
 
 }
