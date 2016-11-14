@@ -56,7 +56,20 @@
 				tentativas++;
 				thiz.atualizarTentativas(tentativas);
             } else if (modo === 'bh') {
-              thiz.modoBh();
+                if (tentativasErradas > 2) {
+                    return 'Game over';
+                }
+
+                tentativas++;
+                this.atualizarTentativas(tentativas);
+            }
+            if (palavra.contains(letra)) {
+                palavraCriptografada = substituirLetra(palavra, palavraCriptografada, letra);
+                this.atualizarPalavra(palavraCriptografada);
+            }
+            else {
+                tentativasErradas++;
+                this.atualizarTentativasErradas(tentativasErradas);
             }
 
             if (!palavraCriptografada.contains('-')) {
@@ -75,19 +88,7 @@
   }
 
   modoBh() {
-    if (tentativasErradas > 2) {
-      return 'Game over';
-    }
-    if (palavra.contains(letra)) {
-      palavraCriptografada = substituirLetra(palavra, palavraCriptografada, letra);
-      this.atualizarPalavra(palavraCriptografada);
-    }
-    else {
-      tentativasErradas++;
-      this.atualizarTentativasErradas(tentativasErradas);
-    }
-    tentativas++;
-    this.atualizarTentativas(tentativas);
+ 
   }
 
 
