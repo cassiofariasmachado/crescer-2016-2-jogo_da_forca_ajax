@@ -80,9 +80,41 @@ jogoDaForca.atualizarTentativasErradas = function (tentativasErradas) {
   $('#tentativas-erradas').text(tentativasErradas)
 }
 
-jogoDaForca.iniciarJogo = function () {
+jogoDaForca.modoBh = function () {
+    if (palavra.contains(letra)) {
+        palavraCriptografada = jogoDaForca.substituirLetra(palavra, palavraCriptografada, letra);
+        jogoDaForca.atualizarPalavra(palavraCriptografada);
+    }
+    else {
+        tentativasErradas++;
+        jogoDaForca.atualizarTentativasErradas(tentativasErradas);
+    }
+    tentativas++;
+    jogoDaForca.atualizarTentativas(tentativas);
+    if (tentativasErradas > 2) {
+        return 'Game over';
+    }
+}
+
+jogoDaForca.modoNormal = function(){
+	              if (palavra.contains(letra)) {
+                  palavraCriptografada = jogoDaForca.substituirLetra(palavra, palavraCriptografada, letra);
+                  jogoDaForca.atualizarPalavra(palavraCriptografada);
+              }
+              else {
+                  tentativasErradas++;
+                  jogoDaForca.atualizarTentativasErradas(tentativasErradas);
+              }
+              tentativas++;
+              jogoDaForca.atualizarTentativas(tentativas);
+              if (tentativasErradas > 5) {
+                  return 'Game over';
+              }
+}
+
+jogoDaForca.iniciarJogo = function (modo) {
   let palavras = new Palavras();
-  palavras.pegarPalavraAleatoria().then(
+  palavras.pegarPalavraAleatoria(modo).then(
     res => {
       let palavra = res.vocabulo.toLocaleUpperCase();
       let palavraCriptografada = jogoDaForca.gerarPalavraCriptografada(palavra.length);
@@ -96,27 +128,15 @@ jogoDaForca.iniciarJogo = function () {
       $("#letra").keydown(function (event) {
         if (jogoDaForca.ehLetra(event.keyCode)) {
           let letra = event.key.toLocaleUpperCase();
-
-          if (palavra.contains(letra)) {
-            palavraCriptografada = jogoDaForca.substituirLetra(palavra, palavraCriptografada, letra);
-            jogoDaForca.atualizarPalavra(palavraCriptografada);
+          if (modo === 'normal') {
+				jogoDaForca.modoNormal();
+          } else if (modo === 'bh') {
+			  setInterval(jogoDaForca.modoBh, 20000);
           }
-          else {
-            tentativasErradas++;
-            jogoDaForca.atualizarTentativasErradas(tentativasErradas);
+          if (!palavraCriptografada.contains('-')) {
+              pontuacao++;
+              return 'Rodada completa'
           }
-          tentativas++;
-          jogoDaForca.atualizarTentativas(tentativas);
-
-          if (tentativasErradas > 5) {
-            return 'Game over';
-          }
-
-          if(!palavraCriptografada.contains('-')){
-            pontuacao++;
-            return 'Rodada completa'
-          }
-
         }
       });
 

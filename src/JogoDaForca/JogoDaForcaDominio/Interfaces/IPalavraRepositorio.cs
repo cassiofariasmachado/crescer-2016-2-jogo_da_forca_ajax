@@ -10,5 +10,6 @@ namespace JogoDaForca.Dominio.Interfaces
     {
         Palavra GetPalavraPorId(int id);
         Palavra GetPalavraAleatoria();
+        Palavra GetPalavraComMaisDe12Caractere();
     }
 }

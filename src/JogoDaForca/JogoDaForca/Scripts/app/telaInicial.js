@@ -29,6 +29,7 @@
       submitHandler: function () {
         self.$btnSubmit.text('Carregando...');
         self.$btnSubmit.attr('disabled', true);
+		self.$.post('/api/usuario', heroi);
         setTimeout(function () {
           jogoDaForca.renderizarTela('principal');
         }, 1000);

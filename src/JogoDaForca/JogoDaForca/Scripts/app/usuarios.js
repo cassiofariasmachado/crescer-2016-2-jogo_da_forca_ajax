@@ -1,4 +1,4 @@
-﻿class Usuarios {
+﻿class Usuario {
 
   buscarUsuarioPorId(id) {
     return new Promise(

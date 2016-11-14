@@ -4,7 +4,7 @@
     this.$elem = $(seletor);
     this.registrarBindsEventos();
     this.renderizarEstadoInicial();
-    jogoDaForca.iniciarJogo();
+    jogoDaForca.iniciarJogo(modo);
   }
 
   registrarBindsEventos() {

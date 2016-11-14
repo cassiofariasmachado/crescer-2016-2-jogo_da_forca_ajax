@@ -23,5 +23,13 @@ namespace JogoDaForca.Repositorio
                 return context.Palavra.OrderBy(o => Guid.NewGuid()).First();
             }
         }
+
+        public Palavra GetPalavraComMaisDe12Caractere()
+        {
+            using (var context = new ContextoDeDados())
+            {
+                return context.Palavra.OrderBy(o => o.Vocabulo.Length>12).First();
+            }
+        }
     }
 }

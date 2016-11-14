@@ -21,9 +21,18 @@ namespace JogoDaForca.Controllers
 
         // GET: api/Palavras
         [ResponseType(typeof(Palavra))]
-        public IHttpActionResult GetPalavra()
+        public IHttpActionResult GetPalavra(string dificuldade)
         {
-            Palavra palavra = palavraRepositorio.GetPalavraAleatoria();
+            Palavra palavra = null;
+            if ("normal".Equals(dificuldade))
+            {
+                palavra = palavraRepositorio.GetPalavraAleatoria();
+            }
+            else if ("bh".Equals(dificuldade))
+            {
+                palavra = palavraRepositorio.GetPalavraComMaisDe12Caractere();
+            }
+            
             if (palavra == null)
             {
                 return NotFound();
@@ -31,6 +40,5 @@ namespace JogoDaForca.Controllers
 
             return Ok(palavra);
         }
-
     }
 }
