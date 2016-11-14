@@ -8,6 +8,8 @@ namespace JogoDaForca.Dominio.Interfaces
 {
     public interface IUsuarioRepositorio
     {
+        Usuario BuscarPorId(int id);
         Usuario BuscarPorNome(string nome);
+        void Adicionar(Usuario usuario);
     }
 }
