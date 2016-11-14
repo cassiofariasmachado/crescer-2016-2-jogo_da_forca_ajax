@@ -57,36 +57,64 @@ jogoDaForca.gerarPalavraCriptografada = function (tamanho) {
 
 jogoDaForca.substituirLetra = function (palavra, palavraCriptografada, letra) {
   for (let i = 0, len = palavra.length; i < len; i++) {
-    if (palavra[i].toLocaleUpperCase() === letra.toLocaleUpperCase()) {
-      palavraCriptografada = palavraCriptografada.replaceAt(i, letra.toLocaleUpperCase());
+    if (palavra[i] === letra) {
+      palavraCriptografada = palavraCriptografada.replaceAt(i, letra);
     }
   }
   return palavraCriptografada;
+}
+
+jogoDaForca.ehLetra = function (keyCode) {
+  return keyCode >= 65 && keyCode <= 90
 }
 
 jogoDaForca.atualizarPalavra = function (novaPalavra) {
   $('#palavra').text(novaPalavra)
 }
 
-jogoDaForca.atualizarTentativas = function (tentativa) {
-  $('#tentativa').text(tentativa)
+jogoDaForca.atualizarTentativas = function (tentativas) {
+  $('#tentativas').text(tentativas)
+}
+
+jogoDaForca.atualizarTentativasErradas = function (tentativasErradas) {
+  $('#tentativas-erradas').text(tentativasErradas)
 }
 
 jogoDaForca.iniciarJogo = function () {
   let palavras = new Palavras();
   palavras.pegarPalavraAleatoria().done(
     res => {
-      let palavra = res.vocabulo;
+      let palavra = res.vocabulo.toLocaleUpperCase();
       let palavraCriptografada = jogoDaForca.gerarPalavraCriptografada(palavra.length);
-      let tentativa = 0;
+      let pontuacao = 0;
+      let tentativas = 0;
+      let tentativasErradas = 0;
+
       jogoDaForca.atualizarPalavra(palavraCriptografada);
-      jogoDaForca.atualizarTentativas(tentativa);
-      let letra = $("#letra").keydown(function (event) {
-        if (event.keyCode > 64 && event.keyCode < 91) {
-          palavraCriptografada = jogoDaForca.substituirLetra(palavra, palavraCriptografada, event.key);
-          tentativa++;
-          jogoDaForca.atualizarPalavra(palavraCriptografada);
-          jogoDaForca.atualizarTentativas(tentativa);
+      jogoDaForca.atualizarTentativas(tentativas);
+
+      $("#letra").keydown(function (event) {
+        if (jogoDaForca.ehLetra(event.keyCode)) {
+          let letra = event.key.toLocaleUpperCase();
+
+          if (palavra.contains(letra)) {
+            palavraCriptografada = jogoDaForca.substituirLetra(palavra, palavraCriptografada, letra);
+            jogoDaForca.atualizarPalavra(palavraCriptografada);
+          }
+          else {
+            tentativasErradas++;
+            jogoDaForca.atualizarTentativasErradas(tentativasErradas);
+          }
+          tentativas++;
+          jogoDaForca.atualizarTentativas(tentativas);
+          if (tentativasErradas > 5) {
+            return 'Game over';
+          }
+          if(!palavraCriptografada.contains('-')){
+            pontuacao++;
+            return 'Rodada completa'
+          }
+
         }
       });
 
