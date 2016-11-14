@@ -20,6 +20,7 @@ namespace JogoDaForca.Controllers
         private IPalavraRepositorio palavraRepositorio = ServicoDeDependencias.MontarPalavraRepositorio();
 
         // GET: api/Palavras
+
         [ResponseType(typeof(Palavra))]
         public IHttpActionResult GetPalavra(string dificuldade)
         {

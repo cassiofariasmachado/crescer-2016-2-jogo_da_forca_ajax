@@ -28,9 +28,11 @@
       res => {
         let palavra = res.vocabulo.toLocaleUpperCase();
         let palavraCriptografada = jogoDaForca.gerarPalavraCriptografada(palavra.length);
-        let pontuacao = 0;
+		let pontuacao = 0;
         let tentativas = 0;
         let tentativasErradas = 0;
+
+		let thiz = this;
 
         this.atualizarPalavra(palavraCriptografada);
         this.atualizarTentativas(tentativas);
@@ -40,9 +42,21 @@
             let letra = event.key.toLocaleUpperCase();
 
             if (modo === 'normal') {
-              this.modoNormal();
+				if (tentativasErradas > 5) {
+				return 'Game over';
+				}
+				if (palavra.contains(letra)) {
+				  palavraCriptografada = jogoDaForca.substituirLetra(palavra, palavraCriptografada, letra);
+				  thiz.atualizarPalavra(palavraCriptografada);
+				}
+				else {
+				  tentativasErradas++;
+				  thiz.atualizarTentativasErradas(tentativasErradas);
+				}
+				tentativas++;
+				thiz.atualizarTentativas(tentativas);
             } else if (modo === 'bh') {
-              this.modoBh();
+              thiz.modoBh();
             }
 
             if (!palavraCriptografada.contains('-')) {
@@ -57,19 +71,7 @@
   }
 
   modoNormal() {
-    if (tentativasErradas > 5) {
-      return 'Game over';
-    }
-    if (palavra.contains(letra)) {
-      palavraCriptografada = jogoDaForca.substituirLetra(palavra, palavraCriptografada, letra);
-      this.atualizarPalavra(palavraCriptografada);
-    }
-    else {
-      tentativasErradas++;
-      this.atualizarTentativasErradas(tentativasErradas);
-    }
-    tentativas++;
-    this.atualizarTentativas(tentativas);
+
   }
 
   modoBh() {
