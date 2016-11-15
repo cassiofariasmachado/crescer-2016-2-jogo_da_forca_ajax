@@ -13,6 +13,9 @@ jogoDaForca.renderizarTela = function (nome) {
         case 'inicial':
             new TelaInicial('#tela-inicial');
             break;
+        case 'game-over':
+            new TelaGameOver('#tela-game-over');
+            break;
     }
 
 };
