@@ -16,9 +16,9 @@ namespace JogoDaForca.Controllers
 
         // GET: api/Usuarios/5
         [ResponseType(typeof(Usuario))]
-        public IHttpActionResult GetUsuario(int id)
+        public IHttpActionResult GetUsuario(string nome)
         {
-            Usuario usuario = usuarioRepositorio.BuscarPorId(id);
+            Usuario usuario = usuarioRepositorio.BuscarPorNome(nome);
             if (usuario == null)
             {
                 return NotFound();
