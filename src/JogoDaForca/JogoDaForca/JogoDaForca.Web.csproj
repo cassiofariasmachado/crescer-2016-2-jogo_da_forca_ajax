@@ -177,6 +177,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JogadasController.cs" />
     <Compile Include="Controllers\PalavrasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -192,6 +193,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app\Jogadas.js" />
     <Content Include="Scripts\app\jogoDaForca.js" />
     <Content Include="Scripts\app\palavras.js" />
     <Content Include="Scripts\app\telaGameOver.js" />

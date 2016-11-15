@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IJogadaRepositorio.cs" />
     <Compile Include="Interfaces\IPalavraRepositorio.cs" />
     <Compile Include="Interfaces\IServicoDeCriptografia.cs" />
     <Compile Include="Interfaces\IUsuarioRepositorio.cs" />

@@ -15,5 +15,10 @@ namespace JogoDaForca.Servicos
         {
             return new UsuarioRepositorio();
         }
-    }
+
+        public static IJogadaRepositorio MontarJogadaRepositorio()
+        {
+            return new JogadaRepositorio();
+        }
+}
 }

@@ -34,6 +34,7 @@ namespace JogoDaForca
                       "~/Scripts/app/telaPrincipal.js",
                       "~/Scripts/app/palavras.js",
                       "~/Scripts/app/usuarios.js",
+                      "~/Scripts/app/jogadas.js",
                       "~/Scripts/app/stringExtents.js",
                       "~/Scripts/app/telaGameOver.js"));
 
