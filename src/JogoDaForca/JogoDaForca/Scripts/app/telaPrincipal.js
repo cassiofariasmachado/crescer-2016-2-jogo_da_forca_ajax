@@ -6,8 +6,8 @@
     this.renderizarEstadoInicial()
       .then(() => {
         self.registrarBindsEventos();
-        self.iniciarJogo('normal')
-      })
+        self.iniciarJogo('normal');
+      })    
   }
 
   registrarBindsEventos() {
@@ -15,6 +15,8 @@
     this.$tentativas = $('#tentativas');
     this.$tentativasErradas = $('#tentativas-erradas');
     this.$letra = $('#letra');
+    this.$palpite = $('#palpite');
+    this.$btnPalpitar = $('#btn-palpitar')
   }
 
   renderizarEstadoInicial() {
@@ -25,74 +27,78 @@
   iniciarJogo(modo) {
     let palavras = new Palavras();
     palavras.pegarPalavraAleatoria(modo).then(
-      res => {
-        let palavra = res.vocabulo.toLocaleUpperCase();
-        let palavraCriptografada = jogoDaForca.gerarPalavraCriptografada(palavra.length);
-		let pontuacao = 0;
-        let tentativas = 0;
-        let tentativasErradas = 0;
+      resposta => {
 
-		let thiz = this;
+        this.palavra = resposta.vocabulo.toLocaleUpperCase();
+        this.palavraCriptografada = jogoDaForca.gerarPalavraCriptografada(this.palavra.length);
+        this.pontuacao = 0;
+        this.tentativas = 0;
+        this.tentativasErradas = 0;
 
-        this.atualizarPalavra(palavraCriptografada);
-        this.atualizarTentativas(tentativas);
+        let self = this;
 
-        this.$letra.keydown(function (event) {
+        self.atualizarPalavra(self.palavraCriptografada);
+        self.atualizarTentativas(self.tentativas);
+
+        self.$letra.keydown(function (event) {
           if (jogoDaForca.ehLetra(event.keyCode)) {
-            let letra = event.key.toLocaleUpperCase();
+            self.letra = event.key.toLocaleUpperCase();
 
-            if (modo === 'normal') {
-				if (tentativasErradas > 5) {
-				return 'Game over';
-				}
-				if (palavra.contains(letra)) {
-				  palavraCriptografada = jogoDaForca.substituirLetra(palavra, palavraCriptografada, letra);
-				  thiz.atualizarPalavra(palavraCriptografada);
-				}
-				else {
-				  tentativasErradas++;
-				  thiz.atualizarTentativasErradas(tentativasErradas);
-				}
-				tentativas++;
-				thiz.atualizarTentativas(tentativas);
-            } else if (modo === 'bh') {
-                if (tentativasErradas > 2) {
-                    return 'Game over';
-                }
-
-                tentativas++;
-                this.atualizarTentativas(tentativas);
-            }
-            if (palavra.contains(letra)) {
-                palavraCriptografada = substituirLetra(palavra, palavraCriptografada, letra);
-                this.atualizarPalavra(palavraCriptografada);
-            }
-            else {
-                tentativasErradas++;
-                this.atualizarTentativasErradas(tentativasErradas);
+            switch(modo) {
+              case 'normal':
+                  self.modoNormal();
+                  break;
+              case 'bh':
+                  self.modoBh();
+                  break;
+              default:
+                  cosole.log('Verificar switch do modo de jogo!');
             }
 
-            if (!palavraCriptografada.contains('-')) {
-              pontuacao++;
-              return 'Rodada completa'
-            }
+            self.verificarLetra();
 
+            if (!self.palavraCriptografada.contains('-')) {
+              self.pontuacao++;
+              console.log('TO-DO: Rodada completa'); 
+            }
           }
         });
+
+        self.$btnPalpitar.on('click', function() {
+                                                      self.$btnPalpitar.text('Palpitando...');
+                                                      self.$btnPalpitar.attr('disabled', true);
+                                                      self.palpitar();
+                                                  }
+        );
+
       }
     );
   }
 
   modoNormal() {
-
+    if (this.tentativasErradas === 5) {
+      console.log('TO-DO: Game over');
+    }
   }
 
   modoBh() {
- 
+    if (this.tentativasErradas === 2) {
+      console.log('TO-DO: Game over');
+    }
   }
 
-
-
+  verificarLetra() {
+    if (this.palavra.contains(this.letra)) {
+      this.palavraCriptografada = jogoDaForca.substituirLetra(this.palavra, this.palavraCriptografada, this.letra);
+      this.atualizarPalavra(this.palavraCriptografada);
+    }
+    else {
+        this.tentativasErradas++;
+        this.atualizarTentativasErradas(this.tentativasErradas);
+    }
+    this.tentativas++;
+    this.atualizarTentativas(this.tentativas);
+  }
 
   atualizarPalavra(novaPalavra) {
     this.$palavra.text(novaPalavra)
@@ -104,6 +110,17 @@
 
   atualizarTentativasErradas(tentativasErradas) {
     this.$tentativasErradas.text(tentativasErradas)
+  }
+
+  palpitar() {
+    let palavraPalpitada = this.$palpite.val().toLocaleUpperCase();
+    if(this.palavra === palavraPalpitada) {
+      self.pontuacao += 2;
+      console.log('TO-DO: Rodada completa'); 
+    }
+    else{
+      console.log('TO-DO: Game over');
+    }
   }
 
 }
