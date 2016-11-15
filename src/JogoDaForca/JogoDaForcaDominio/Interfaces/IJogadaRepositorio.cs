@@ -13,5 +13,6 @@ namespace JogoDaForca.Dominio.Interfaces
         IEnumerable<Jogada> RankearJogadasPorPontuacao(int pagina, int tamanhoPagina);
         int ContarRegistros();
         void Adicionar(Jogada jogada);
+        IEnumerable<Jogada> RankearJogadasPorDificuldade(int pagina, int tamanhoPagina,string modo);
     }
 }

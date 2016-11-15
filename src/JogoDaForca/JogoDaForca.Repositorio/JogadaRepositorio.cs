@@ -41,5 +41,19 @@ namespace JogoDaForca.Repositorio
                 contexto.SaveChanges();
             }
         }
+
+        public IEnumerable<Jogada> RankearJogadasPorDificuldade(int pagina, int tamanhoPagina, string modo)
+        {
+            using (var context = new ContextoDeDados())
+            {
+                return context.Jogada
+                    .Where(j => j.Modo == modo)
+                    .OrderBy(j => j.Pontuacao)
+                    .Skip(tamanhoPagina * (pagina - 1))
+                    .Take(tamanhoPagina)
+                    .ToList();
+            }
+        }
+        
     }
 }

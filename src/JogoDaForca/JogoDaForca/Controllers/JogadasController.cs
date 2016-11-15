@@ -51,6 +51,24 @@ namespace JogoDaForca.Controllers
             });
         }
 
+        // GET: api/jogadas
+        public IHttpActionResult GetJogada(int pagina = 1, int tamanhoPagina = 5, string modo)
+        {
+            //pagina = pagina ?? 1;
+            //tamanhoPagina = tamanhoPagina ?? 5;
+
+            // simulando lentidão
+            //System.Threading.Thread.Sleep(1500);
+
+            var registros = jogadas.RankearJogadasPorDificuldade(pagina, tamanhoPagina, modo);
+
+            return Ok(new
+            {
+                total = jogadas.ContarRegistros(),
+                dados = registros
+            });
+        }
+
 
         // POST: api/jogadas
         [ResponseType(typeof(Jogada))]
