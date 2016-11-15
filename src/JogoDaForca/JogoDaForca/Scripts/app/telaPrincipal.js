@@ -65,6 +65,11 @@
           }
         });
 
+        if(self.palavra.contains(' ')){
+            self.palavraCriptografada = jogoDaForca.substituirLetra(self.palavra, self.palavraCriptografada, ' ');
+            self.atualizarPalavra(self.palavraCriptografada);
+        }
+
         self.$btnPalpitar.on('click', function() {
                                                       self.$btnPalpitar.text('Palpitando...');
                                                       self.$btnPalpitar.attr('disabled', true);
