@@ -34,11 +34,11 @@ namespace JogoDaForca
                       "~/Scripts/app/telaPrincipal.js",
                       "~/Scripts/app/palavras.js",
                       "~/Scripts/app/usuarios.js",
-                      "~/Scripts/app/stringExtents.js"));
+                      "~/Scripts/app/stringExtents.js",
+                      "~/Scripts/app/telaGameOver.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.css"));
         }
     }
 }
