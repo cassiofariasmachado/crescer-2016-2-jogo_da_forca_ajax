@@ -1,14 +1,15 @@
 ﻿class TelaPrincipal {
 
-    constructor(seletor) {
-        this.$elem = $(seletor);
-        let self = this;
-        this.renderizarEstadoInicial()
-          .then(() => {
-              self.registrarBindsEventos();
-              self.iniciarJogo('bh');
-          })
-    }
+  constructor(seletor, usuario, dificuldade) {
+    this.$elem = $(seletor);
+    this.usuario = usuario;
+    this.dificuldade = dificuldade;
+    this.renderizarEstadoInicial()
+      .then(() => {
+        this.registrarBindsEventos();
+        this.iniciarJogo(this.dificuldade);
+      })    
+  }
 
     registrarBindsEventos() {
         this.$palavra = $('#palavra');
@@ -34,7 +35,7 @@
               this.pontuacao = 0;
               this.tentativas = 0;
               this.tentativasErradas = 0;
-
+			  
               let self = this;
 
               self.atualizarPalavra(self.palavraCriptografada);
@@ -63,6 +64,11 @@
                       }
                   }
               });
+			  
+			  if(self.palavra.contains(' ')){
+				self.palavraCriptografada = jogoDaForca.substituirLetra(self.palavra, self.palavraCriptografada, ' ');
+				self.atualizarPalavra(self.palavraCriptografada);
+			  }
 
               self.$btnPalpitar.on('click', function () {
                   self.$btnPalpitar.text('Palpitando...');
@@ -70,7 +76,7 @@
                   self.palpitar();
               }
               );
-
+              
           }
         );
     }
