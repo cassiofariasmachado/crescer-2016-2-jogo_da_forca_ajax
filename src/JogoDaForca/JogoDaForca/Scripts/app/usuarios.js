@@ -1,14 +1,15 @@
 ﻿class Usuarios {
 
-  buscarUsuarioPorId(id) {
+  buscarUsuario(nome) {
     return new Promise(
-      (resolve, reject) => resolve($.get('api/usuarios/' + id))
+      (resolve) => 
+        resolve($.get('api/usuarios/', { nome: nome }))
     );
   }
 
   salvar(usuario) {
     return new Promise(
-      (resolve, reject) => resolve($.post('/api/usuarios', usuario))
+      (resolve) => resolve($.post('/api/usuarios', usuario))
     );
   }
 
