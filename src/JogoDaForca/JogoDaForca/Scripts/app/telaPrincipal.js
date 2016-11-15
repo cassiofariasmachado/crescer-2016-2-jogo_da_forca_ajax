@@ -1,14 +1,15 @@
 ﻿class TelaPrincipal {
 
-    constructor(seletor) {
-        this.$elem = $(seletor);
-        let self = this;
-        this.renderizarEstadoInicial()
-          .then(() => {
-              self.registrarBindsEventos();
-              self.iniciarJogo('bh');
-          })
-    }
+  constructor(seletor, usuario, dificuldade) {
+    this.$elem = $(seletor);
+    this.usuario = usuario;
+    this.dificuldade = dificuldade;
+    this.renderizarEstadoInicial()
+      .then(() => {
+        this.registrarBindsEventos();
+        this.iniciarJogo(this.dificuldade);
+      })    
+  }
 
     registrarBindsEventos() {
         this.$palavra = $('#palavra');
@@ -75,7 +76,7 @@
                   self.palpitar();
               }
               );
-
+              
           }
         );
     }
