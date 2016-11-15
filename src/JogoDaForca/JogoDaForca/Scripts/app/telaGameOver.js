@@ -15,5 +15,6 @@
 
     renderizarEstadoInicial() {
         this.$elem.show();
+        return jogoDaForca.render('#tela-game-over', 'game-over');
     }
 }
