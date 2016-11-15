@@ -1,25 +1,40 @@
-﻿<div>
+﻿<div class="col-md-12">
     <h2>Bem-vindo ao jogo da forca:</h2>
 </div>
-<div>
+<div class="col-md-12">
     Tetativas: <span id="tentativas"></span>
 </div>
-<div>
+<div class="col-md-12">
     Tetativas erradas: <span id="tentativas-erradas"></span>
 </div>
-<div id="palavra"></div>
 
-<form>
-    <fieldset>
-        <label for="letra">Digite a letra escolhida:</label>
-        <input id="letra" type="text">
-    </fieldset>
-</form>
 <hr>
 
-<form>
-    <fieldset>
-        <label for="letra">Palpite:</label>
-        <input id="letra" type="text">
-    </fieldset>
-</form>
+<div style="text-align:center" class="col-md-12">
+    <h1 id="palavra"></h1>
+</div>
+
+
+<div id="form-letra" class="form-group">
+    <div class="col-md-3">
+        <label for="letra">Letra:</label>
+    </div>
+    <div class="col-md-9">
+        <input id="letra" type="text" class="form-control" placeholder="Digite a letra escolhida..."/>
+    </div>
+</div>
+
+<hr>
+<hr>
+
+<div id="form-palpitar" class="form-group">
+    <div class="col-md-9">
+        <input type="text" id="palpite" name="palpite" class="form-control" placeholder="Digite seu palpite..."/>
+    </div>
+
+    <div class="form-group">
+        <div id="container-botao-palpitar" class="col-md-3">
+            <button id="btn-palpitar" class="btn btn-primary">Palpitar</button>
+        </div>
+    </div>
+</div>
