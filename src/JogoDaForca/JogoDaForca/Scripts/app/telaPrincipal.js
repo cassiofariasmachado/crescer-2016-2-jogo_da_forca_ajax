@@ -34,7 +34,7 @@
               this.pontuacao = 0;
               this.tentativas = 0;
               this.tentativasErradas = 0;
-
+			  
               let self = this;
 
               self.atualizarPalavra(self.palavraCriptografada);
@@ -63,6 +63,11 @@
                       }
                   }
               });
+			  
+			  if(self.palavra.contains(' ')){
+				self.palavraCriptografada = jogoDaForca.substituirLetra(self.palavra, self.palavraCriptografada, ' ');
+				self.atualizarPalavra(self.palavraCriptografada);
+			  }
 
               self.$btnPalpitar.on('click', function () {
                   self.$btnPalpitar.text('Palpitando...');
