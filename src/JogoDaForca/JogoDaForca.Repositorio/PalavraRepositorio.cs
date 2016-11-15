@@ -28,7 +28,7 @@ namespace JogoDaForca.Repositorio
         {
             using (var context = new ContextoDeDados())
             {
-                return context.Palavra.OrderBy(o => o.Vocabulo.Length>12).First();
+                return context.Palavra.Where(p => p.Vocabulo.Length > 12).OrderBy(o => Guid.NewGuid()).First();
             }
         }
     }

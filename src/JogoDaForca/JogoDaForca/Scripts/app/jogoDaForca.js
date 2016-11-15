@@ -14,9 +14,6 @@ jogoDaForca.renderizarTela = function (nome) {
         case 'inicial':
             new TelaInicial('#tela-inicial');
             break;
-        case 'GameOver':
-            new TelaGameOver('#game-over');
-            break;
     }
 
 };
@@ -68,6 +65,6 @@ jogoDaForca.substituirLetra = function (palavra, palavraCriptografada, letra) {
 }
 
 jogoDaForca.ehLetra = function (keyCode) {
-    return keyCode >= 65 && keyCode <= 90
+    return keyCode >= 65 && keyCode <= 90 || 186
 }
 
