@@ -6,8 +6,8 @@
     this.renderizarEstadoInicial()
       .then(() => {
         self.registrarBindsEventos();
-        self.iniciarJogo('normal')
-      })
+        self.iniciarJogo('normal');
+      })    
   }
 
   registrarBindsEventos() {
@@ -15,6 +15,8 @@
     this.$tentativas = $('#tentativas');
     this.$tentativasErradas = $('#tentativas-erradas');
     this.$letra = $('#letra');
+    this.$palpite = $('#palpite');
+    this.$btnPalpitar = $('#btn-palpitar')
   }
 
   renderizarEstadoInicial() {
@@ -59,9 +61,16 @@
               self.pontuacao++;
               console.log('TO-DO: Rodada completa'); 
             }
-
           }
         });
+
+        self.$btnPalpitar.on('click', function() {
+                                                      self.$btnPalpitar.text('Palpitando...');
+                                                      self.$btnPalpitar.attr('disabled', true);
+                                                      self.palpitar();
+                                                  }
+        );
+
       }
     );
   }
@@ -101,6 +110,17 @@
 
   atualizarTentativasErradas(tentativasErradas) {
     this.$tentativasErradas.text(tentativasErradas)
+  }
+
+  palpitar() {
+    let palavraPalpitada = this.$palpite.val().toLocaleUpperCase();
+    if(this.palavra === palavraPalpitada) {
+      self.pontuacao += 2;
+      console.log('TO-DO: Rodada completa'); 
+    }
+    else{
+      console.log('TO-DO: Game over');
+    }
   }
 
 }
