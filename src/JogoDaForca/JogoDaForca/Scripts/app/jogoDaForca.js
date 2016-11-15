@@ -1,7 +1,6 @@
 ﻿let jogoDaForca = {};
 
 jogoDaForca.renderizarTela = function (nome) {
-
     // escondendo todas as telas antes de renderizar a tela correta
     let $subTelas = $('.sub-tela');
     $.each($subTelas, (indice, elem) => $(elem).hide());
@@ -9,7 +8,7 @@ jogoDaForca.renderizarTela = function (nome) {
 
     switch (nome) {
         case 'principal':
-            new TelaPrincipal('#tela-principal', this);
+            new TelaPrincipal('#tela-principal', this.usuario, this.dificuldade);
             break;
         case 'inicial':
             new TelaInicial('#tela-inicial');

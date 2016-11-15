@@ -1,12 +1,13 @@
 ﻿class TelaPrincipal {
 
-  constructor(seletor) {
+  constructor(seletor, usuario, dificuldade) {
     this.$elem = $(seletor);
-    let self = this;
+    this.usuario = usuario;
+    this.dificuldade = dificuldade;
     this.renderizarEstadoInicial()
       .then(() => {
-        self.registrarBindsEventos();
-        self.iniciarJogo('normal');
+        this.registrarBindsEventos();
+        this.iniciarJogo(this.dificuldade);
       })    
   }
 
