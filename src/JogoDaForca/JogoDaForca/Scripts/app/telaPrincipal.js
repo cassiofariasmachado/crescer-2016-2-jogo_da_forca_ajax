@@ -131,14 +131,8 @@
     }
 
     gameOver() {
-        let jogadaASerCriada = {pontuacao: self.pontuacao, usuario: usuario,modo: this.dificuldade}
-        self.cadastrarNovaJogada(jogadaASerCriada);
         return jogoDaForca.renderizarTela('game-over');
             
-    }
-
-    sucesso() {
-        return jogoDaForca.renderizarTela('sucesso');
     }
 
     sucesso() {
