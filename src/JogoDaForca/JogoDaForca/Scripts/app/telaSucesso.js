@@ -1,4 +1,4 @@
-﻿class TelaGameOver {
+﻿class TelaSucesso {
 
     constructor(seletor) {
         this.$elem = $(seletor);
@@ -14,12 +14,11 @@
         this.$btnVoltarAoJogo.on('click', function () {
             jogoDaForca.renderizarTela('inicial');
         }
-);
-
+        );
     }
 
     renderizarEstadoInicial() {
         this.$elem.show();
-        return jogoDaForca.render('#tela-game-over', 'game-over');
+        return jogoDaForca.render('#tela-sucesso', 'sucesso');
     }
 }

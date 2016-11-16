@@ -40,6 +40,7 @@
                                  .then(res => {
                                      self.usuario = res;
                                      jogoDaForca.renderizarTela.call(self, 'principal');
+                                     self.$btnSubmit.text('Jogar');
                                  })
                                  .catch(rej => {
                                      console.log('Usuario não encontrado, será cadastrado um novo.')
@@ -47,6 +48,7 @@
                                                   .then(res => {
                                                       self.usuario = res;
                                                       jogoDaForca.renderizarTela.call(self, 'principal');
+                                                      self.$btnSubmit.text('Jogar');
                                                   });
                                  });
                 }, 1000);

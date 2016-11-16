@@ -177,6 +177,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JogadasController.cs" />
     <Compile Include="Controllers\PalavrasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -192,12 +193,14 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app\Jogadas.js" />
     <Content Include="Scripts\app\jogoDaForca.js" />
     <Content Include="Scripts\app\palavras.js" />
     <Content Include="Scripts\app\telaGameOver.js" />
     <Content Include="Scripts\app\telaInicial.js" />
     <Content Include="Scripts\app\telaPrincipal.js" />
     <Content Include="Scripts\app\stringExtents.js" />
+    <Content Include="Scripts\app\telaSucesso.js" />
     <Content Include="Scripts\app\usuarios.js" />
     <Content Include="Scripts\app\_start.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -225,8 +228,8 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Static\Templates\game-over.tpl.html" />
     <Content Include="Static\Templates\leaderboard.tpl.html" />
+    <Content Include="Static\Templates\sucesso.tpl.html" />
     <Content Include="Static\Templates\tela-principal.tpl.html" />
-    <Content Include="Static\Templates\telaSucesso.tpl.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

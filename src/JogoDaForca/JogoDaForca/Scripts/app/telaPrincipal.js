@@ -84,13 +84,12 @@
     modoNormal() {
         if (this.tentativasErradas === 5) {
             this.gameOver();
-            console.log('TO-DO: Game over');
         }
     }
 
     modoBh() {
         if (this.tentativasErradas === 2) {
-            console.log('TO-DO: Game over');
+            this.gameOver();
         }
     }
 
@@ -123,15 +122,29 @@
         let palavraPalpitada = this.$palpite.val().toLocaleUpperCase();
         if (this.palavra === palavraPalpitada) {
             self.pontuacao += 2;
+            this.sucesso();
             console.log('TO-DO: Rodada completa');
         }
         else {
-            console.log('TO-DO: Game over');
+            this.gameOver();
         }
     }
 
     gameOver() {
+        let jogadaASerCriada = {pontuacao: self.pontuacao, usuario: usuario,modo: this.dificuldade}
+        self.cadastrarNovaJogada(jogadaASerCriada);
         return jogoDaForca.renderizarTela('game-over');
+            
     }
 
+<<<<<<< Updated upstream
+    cadastrarNovaJogada(jogada) {
+        this.jogadas.cadastrar(jogada)
+    }
+=======
+    sucesso() {
+        return jogoDaForca.renderizarTela('sucesso');
+    }
+
+>>>>>>> Stashed changes
 }

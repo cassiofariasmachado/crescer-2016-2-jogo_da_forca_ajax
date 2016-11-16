@@ -12,5 +12,7 @@ namespace JogoDaForca.Dominio
         public Usuario Usuario { get; set; }
         public int Pontuacao { get; set; }
         public string Modo { get; set; }
+
+
     }
 }
