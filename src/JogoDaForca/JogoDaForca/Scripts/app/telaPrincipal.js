@@ -76,14 +76,14 @@
                   self.palpitar();
               }
               );
-              
+
           }
         );
     }
 
     modoNormal() {
         if (this.tentativasErradas === 5) {
-            self.telaPrincipal.gameOver().then();
+            this.gameOver();
             console.log('TO-DO: Game over');
         }
     }
@@ -131,7 +131,7 @@
     }
 
     gameOver() {
-        return jogoDaForca.render('#game-over', 'game-over');
+        return jogoDaForca.renderizarTela('game-over');
     }
 
 }
