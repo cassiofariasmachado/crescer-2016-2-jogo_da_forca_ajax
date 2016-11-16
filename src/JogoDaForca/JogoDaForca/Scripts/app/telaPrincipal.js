@@ -141,4 +141,8 @@
         return jogoDaForca.renderizarTela('sucesso');
     }
 
+    sucesso() {
+        return jogoDaForca.renderizarTela('sucesso');
+    }
+
 }
