@@ -137,14 +137,8 @@
             
     }
 
-<<<<<<< Updated upstream
-    cadastrarNovaJogada(jogada) {
-        this.jogadas.cadastrar(jogada)
-    }
-=======
     sucesso() {
         return jogoDaForca.renderizarTela('sucesso');
     }
 
->>>>>>> Stashed changes
 }
