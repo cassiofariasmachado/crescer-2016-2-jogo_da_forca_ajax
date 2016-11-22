@@ -1,35 +1,34 @@
 ﻿using JogoDaForca.Dominio;
-using JogoDaForca.Dominio.Interfaces;
+using JogoDaForca.Dominio.Repositorios;
 using System;
+using System.Collections.Generic;
 using System.Linq;
-
 
 namespace JogoDaForca.Repositorio
 {
     public class PalavraRepositorio : IPalavraRepositorio
     {
-        public Palavra GetPalavraPorId(int id)
+        public Palavra Buscar(int id)
         {
             using (var context = new ContextoDeDados())
             {
-                return context.Palavra.FirstOrDefault(p => p.Id==id);
+                return context.Palavra.Find(id);
             }
         }
 
-        public Palavra GetPalavraAleatoria()
+        public IEnumerable<Palavra> BuscarPalavrasAleatorias(int qtdCaracteresMinima = 0)
         {
-            using (var context = new ContextoDeDados())
+            using(var contexto = new ContextoDeDados())
             {
-                return context.Palavra.OrderBy(o => Guid.NewGuid()).First();
-            }
-        }
+                IQueryable<Palavra> query = contexto.Palavra;
+                if(qtdCaracteresMinima != 0)
+                {
+                    query = query.Where(_ => _.Texto.Length > qtdCaracteresMinima);
+                }
 
-        public Palavra GetPalavraComMaisDe12Caractere()
-        {
-            using (var context = new ContextoDeDados())
-            {
-                return context.Palavra.Where(p => p.Vocabulo.Length > 12).OrderBy(o => Guid.NewGuid()).First();
+                return query.OrderBy(o => Guid.NewGuid()).ToList();
             }
+            
         }
     }
 }
