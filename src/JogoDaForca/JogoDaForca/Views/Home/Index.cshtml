@@ -1,31 +1,18 @@
-﻿<div id="tela-inicial" class="sub-tela formulario-centralizado col-md-5">
-    
-    <form id="form-usuario" class="form-horizontal">
-        
-        <div class="form-group">
-            <label for="usuario" class="col-md-3">Usuário</label>
-            <div class="col-md-9">
-                <input type="text" id="usuario" name="usuario" class="form-control has-error" required/>
-            </div>
-        </div>
+﻿<div id="tela-inicial" class="sub-tela">
 
-        <div>
-            <label for="dificuldade" class="col-md-3">Dificuldade</label>
-            <div class="col-md-9">
-                <select id="dificuldade" name="dificuldade" class="form-control has-error">
-                    <option value="normal">Normal</option>
-                    <option value="bh">BH</option>
-                </select>
-            </div>
-        </div>
+    <form id="form-usuario">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" name="usuario" required />
 
-        <div class="form-group">
-            <div id="container-botao-entrar" class="col-md-3">
-                <button type="submit" class="btn btn-primary">Jogar</button>
-            </div>
-        </div>
+        <label for="dificuldade">Dificuldade</label>
+        <select id="dificuldade" name="dificuldade">
+            <option value="Normal">Normal</option>
+            <option value="BH">BH</option>
+        </select>
 
+        <button id="botao-jogar" type="submit">Jogar</button>
     </form>
+
 </div>
 
 <div id="tela-principal" class="sub-tela"></div>
