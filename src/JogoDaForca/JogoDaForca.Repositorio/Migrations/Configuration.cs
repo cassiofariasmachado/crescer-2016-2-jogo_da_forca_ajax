@@ -92,10 +92,10 @@ namespace JogoDaForca.Repositorio.Migrations
 
             foreach (var palavra in palavras)
             {
-                listaDePalavras.Add(new Palavra() { Vocabulo = palavra });
+                listaDePalavras.Add(new Palavra() { Texto = palavra });
             }
 
-            context.Palavra.AddOrUpdate(p => p.Vocabulo, listaDePalavras.ToArray());
+            context.Palavra.AddOrUpdate(p => p.Texto, listaDePalavras.ToArray());
         }
     }
 }
