@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JogoDaForca.Dominio.Interfaces
+namespace JogoDaForca.Dominio.Repositorios
 {
     public interface IPalavraRepositorio
     {
-        Palavra GetPalavraPorId(int id);
-        Palavra GetPalavraAleatoria();
-        Palavra GetPalavraComMaisDe12Caractere();
+        Palavra Buscar(int id);
+        IEnumerable<Palavra> BuscarPalavrasAleatorias(int qtdCaracteresMinima = 0);
     }
 }

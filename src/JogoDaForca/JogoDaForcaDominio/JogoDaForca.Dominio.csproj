@@ -40,11 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IJogadaRepositorio.cs" />
-    <Compile Include="Interfaces\IPalavraRepositorio.cs" />
-    <Compile Include="Interfaces\IServicoDeCriptografia.cs" />
-    <Compile Include="Interfaces\IUsuarioRepositorio.cs" />
     <Compile Include="Dificuldade.cs" />
+    <Compile Include="Repositorios\ILeaderboardRepositorio.cs" />
+    <Compile Include="Repositorios\IPalavraRepositorio.cs" />
+    <Compile Include="Repositorios\IJogadorRepositorio.cs" />
     <Compile Include="Leaderboard.cs" />
     <Compile Include="Palavra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
