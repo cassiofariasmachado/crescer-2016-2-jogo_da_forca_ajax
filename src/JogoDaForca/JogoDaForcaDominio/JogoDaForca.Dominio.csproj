@@ -44,6 +44,7 @@
     <Compile Include="Interfaces\IPalavraRepositorio.cs" />
     <Compile Include="Interfaces\IServicoDeCriptografia.cs" />
     <Compile Include="Interfaces\IUsuarioRepositorio.cs" />
+    <Compile Include="Dificuldade.cs" />
     <Compile Include="Leaderboard.cs" />
     <Compile Include="Palavra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
