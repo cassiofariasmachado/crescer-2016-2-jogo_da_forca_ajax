@@ -1,5 +1,5 @@
-﻿using JogoDaForca.Repositorio;
-using JogoDaForca.Dominio.Interfaces;
+﻿using JogoDaForca.Dominio.Repositorios;
+using JogoDaForca.Repositorio;
 
 namespace JogoDaForca.Servicos
 {
@@ -11,14 +11,14 @@ namespace JogoDaForca.Servicos
             return new PalavraRepositorio();
         }
 
-        public static IUsuarioRepositorio MontarUsuarioRepositorio()
+        public static IJogadorRepositorio MontarUsuarioRepositorio()
         {
-            return new UsuarioRepositorio();
+            return new JogadorRepositorio();
         }
 
-        public static IJogadaRepositorio MontarJogadaRepositorio()
+        public static ILeaderboardRepositorio MontarJogadaRepositorio()
         {
-            return new JogadaRepositorio();
+            return new LeaderboardRepositorio();
         }
 }
 }
