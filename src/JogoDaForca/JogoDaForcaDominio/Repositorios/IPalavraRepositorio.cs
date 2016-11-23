@@ -9,6 +9,6 @@ namespace JogoDaForca.Dominio.Repositorios
     public interface IPalavraRepositorio
     {
         Palavra Buscar(int id);
-        IEnumerable<Palavra> BuscarPalavrasAleatorias(int qtdCaracteresMinima = 0);
+        Palavra BuscarPalavraAleatoria(int qtdCaracteresMinima = 0);
     }
 }
