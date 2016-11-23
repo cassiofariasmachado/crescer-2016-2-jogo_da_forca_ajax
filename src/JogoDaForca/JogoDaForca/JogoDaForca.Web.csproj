@@ -189,7 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Scripts\app\Jogadas.js" />
+    <Content Include="Scripts\app\leaderboars.js" />
     <Content Include="Scripts\app\jogoDaForca.js" />
     <Content Include="Scripts\app\palavras.js" />
     <Content Include="Scripts\app\extents\storageExtents.js" />
@@ -250,7 +250,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JogoDaForca.Repositorio\JogoDaForca.Repositorio.csproj">
-      <Project>{36eec429-65ac-476a-8442-787826b79a6c}</Project>
+      <Project>{36EEC429-65AC-476A-8442-787826B79A6C}</Project>
       <Name>JogoDaForca.Repositorio</Name>
     </ProjectReference>
     <ProjectReference Include="..\JogoDaForcaDominio\JogoDaForca.Dominio.csproj">

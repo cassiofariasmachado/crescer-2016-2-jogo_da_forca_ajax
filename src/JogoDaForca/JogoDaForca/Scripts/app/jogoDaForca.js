@@ -7,8 +7,8 @@ jogoDaForca.renderizarTela = function (nome) {
     let seletor = '';
 
     switch (nome) {
-        case 'principal':
-            new TelaPrincipal('#tela-principal', this.usuario, this.dificuldade);
+        case 'jogo':
+            new TelaJogo('#tela-jogo');
             break;
         case 'inicial':
             new TelaInicial('#tela-inicial');
@@ -29,8 +29,7 @@ jogoDaForca.loadTemplate = function (name) {
         $.get(`/static/templates/${name}.tpl.html`).then(
           (template) => {
               resolve(Handlebars.compile(template));
-          }
-        )
+          });
     });
 
 };
@@ -43,8 +42,7 @@ jogoDaForca.render = function (viewElementSelector, templateName, data) {
              let rendered = templateFn(data);
              $(viewElementSelector).html(rendered);
              resolve();
-         }
-       );
+         });
     });
 };
 
@@ -52,24 +50,20 @@ jogoDaForca.iniciar = function () {
     return jogoDaForca.renderizarTela('inicial');
 };
 
-jogoDaForca.gerarPalavraCriptografada = function (tamanho) {
+jogoDaForca.gerarPalavraCriptografada = function (palavra) {
     let palavraCriptografada = '';
-    for (let i = 0, len = tamanho; i < len; i++) {
-        palavraCriptografada += '-';
-    }
-    return palavraCriptografada;
-}
-
-jogoDaForca.substituirLetra = function (palavra, palavraCriptografada, letra) {
     for (let i = 0, len = palavra.length; i < len; i++) {
-        if (palavra[i] === letra) {
-            palavraCriptografada = palavraCriptografada.replaceAt(i, letra);
+        if(palavra[i] === ' ' || palavra[i] === '-') {
+            palavraCriptografada += ' ';
+        }
+        else {
+            palavraCriptografada += '-';
         }
     }
     return palavraCriptografada;
 }
 
 jogoDaForca.ehLetra = function (keyCode) {
-    return keyCode >= 65 && keyCode <= 90 || keyCode === 186
+    return keyCode >= 65 && keyCode <= 90 || keyCode === 186;
 }
 

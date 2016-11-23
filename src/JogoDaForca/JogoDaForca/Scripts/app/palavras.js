@@ -1,8 +1,9 @@
 ﻿class Palavras {
 
-  pegarPalavraAleatoria(dificuldade) {
+  buscarPalavraAleatoria(dificuldade) {
       return new Promise(
           (resolve, reject) => resolve($.get('api/palavras', { dificuldade: dificuldade }))
       );
   }
+
 }
