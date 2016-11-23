@@ -1,11 +1,8 @@
 ﻿using JogoDaForca.Dominio;
 using JogoDaForca.Dominio.Repositorios;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JogoDaForca.Test.Mocks
 {
@@ -36,7 +33,6 @@ namespace JogoDaForca.Test.Mocks
                 return this.palavras.Where(_ => _.Texto.Length > qtdCaracteresMinima)
                                     .OrderBy(o => Guid.NewGuid());
             }
-
             return this.palavras.OrderBy(o => Guid.NewGuid());
         }
     }
