@@ -1,24 +1,20 @@
 ﻿using JogoDaForca.Dominio.Repositorios;
 using JogoDaForca.Repositorio;
+using JogoDaForcaDominio.Servicos;
 
 namespace JogoDaForca.Servicos
 {
     public class ServicoDeDependencias
     {
 
-        public static IPalavraRepositorio MontarPalavraRepositorio()
+        public static ServicoDeJogador MontarServicoDeJogador()
         {
-            return new PalavraRepositorio();
+            return new ServicoDeJogador(new JogadorRepositorio());
         }
 
-        public static IJogadorRepositorio MontarUsuarioRepositorio()
+        public static ServicoDePalavra MontarServicoDePalavra()
         {
-            return new JogadorRepositorio();
+            return new ServicoDePalavra(new PalavraRepositorio());
         }
-
-        public static ILeaderboardRepositorio MontarJogadaRepositorio()
-        {
-            return new LeaderboardRepositorio();
-        }
-}
+    }
 }
