@@ -193,8 +193,8 @@
     <Content Include="Scripts\app\jogoDaForca.js" />
     <Content Include="Scripts\app\palavras.js" />
     <Content Include="Scripts\app\telaInicial.js" />
-    <Content Include="Scripts\app\stringExtents.js" />
     <Content Include="Scripts\app\usuarios.js" />
+    <Content Include="Scripts\app\extents\stringExtents.js" />
     <Content Include="Scripts\app\_start.js" />
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
