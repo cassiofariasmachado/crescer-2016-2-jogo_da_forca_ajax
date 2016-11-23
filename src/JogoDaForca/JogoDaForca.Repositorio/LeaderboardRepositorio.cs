@@ -17,24 +17,6 @@ namespace JogoDaForca.Repositorio
             }
         }
 
-        public IEnumerable<Leaderboard> Listar(int pagina, int tamanhoPagina, Dificuldade? dificuldade = null)
-        {
-            using (var contexto = new ContextoDeDados())
-            {
-                IQueryable<Leaderboard> query = contexto.Leaderboard;
-
-                if (dificuldade != null)
-                {
-                    query = query.Where(_ => _.Dificuldade == dificuldade);
-                }
-
-                return query.OrderBy(_ => _.Pontuacao)
-                            .Skip(tamanhoPagina * (pagina - 1))
-                            .Take(tamanhoPagina)
-                            .ToList();
-            }
-        }
-
         public void Inserir(Leaderboard leaderboard)
         {
             using (var contexto = new ContextoDeDados())
@@ -46,14 +28,37 @@ namespace JogoDaForca.Repositorio
                 }
                 contexto.SaveChanges();
             }
+        }
 
-            
+        public IList<Leaderboard> Listar(int pagina, int tamanhoPagina)
+        {
+            using (var contexto = new ContextoDeDados())
+            {
+                return contexto.Leaderboard.OrderBy(_ => _.Pontuacao)
+                               .Skip(tamanhoPagina * (pagina - 1))
+                               .Take(tamanhoPagina)
+                               .ToList();
+            }
+        }
+
+        public IList<Leaderboard> Listar(int pagina, int tamanhoPagina, Dificuldade dificuldade)
+        {
+            using (var contexto = new ContextoDeDados())
+            {
+                return contexto.Leaderboard.OrderBy(_ => _.Pontuacao)
+                               .Where(_ => _.Dificuldade == dificuldade)
+                               .Skip(tamanhoPagina * (pagina - 1))
+                               .Take(tamanhoPagina)
+                               .ToList();
+            }
         }
 
         public int ContarRegistros()
         {
             using (var contexto = new ContextoDeDados())
+            {
                 return contexto.Leaderboard.Count();
+            }
         }
 
     }
