@@ -16,19 +16,18 @@ namespace JogoDaForca.Repositorio
             }
         }
 
-        public IEnumerable<Palavra> BuscarPalavrasAleatorias(int qtdCaracteresMinima = 0)
+        public Palavra BuscarPalavraAleatoria(int qtdCaracteresMinima = 0)
         {
             using(var contexto = new ContextoDeDados())
             {
                 IQueryable<Palavra> query = contexto.Palavra;
-                if(qtdCaracteresMinima != 0)
+                if(qtdCaracteresMinima > 0)
                 {
-                    query = query.Where(_ => _.Texto.Length > qtdCaracteresMinima);
+                    query = query.Where(_ => _.Texto.Length >= qtdCaracteresMinima);
                 }
 
-                return query.OrderBy(o => Guid.NewGuid()).ToList();
+                return query.OrderBy(o => Guid.NewGuid()).First();
             }
-            
         }
     }
 }
