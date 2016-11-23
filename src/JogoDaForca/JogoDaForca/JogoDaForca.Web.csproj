@@ -223,10 +223,10 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Static\Templates\game-over.tpl.html" />
-    <Content Include="Static\Templates\leaderboard.tpl.html" />
-    <Content Include="Static\Templates\sucesso.tpl.html" />
-    <Content Include="Static\Templates\tela-principal.tpl.html" />
+    <Content Include="Static\Templates\tela-game-over.tpl.html" />
+    <Content Include="Static\Templates\tela-leaderboard.tpl.html" />
+    <Content Include="Static\Templates\tela-sucesso.tpl.html" />
+    <Content Include="Static\Templates\tela-jogo.tpl.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
