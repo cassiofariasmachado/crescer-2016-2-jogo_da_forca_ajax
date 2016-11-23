@@ -1,7 +1,5 @@
 ﻿using JogoDaForca.Dominio;
 using JogoDaForca.Dominio.Repositorios;
-using System;
-using System.Collections.Generic;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -32,7 +30,8 @@ namespace JogoDaForca.Test.Mocks
 
         public void Inserir(Jogador jogador)
         {
-            throw new NotImplementedException();
+            jogador.Id = jogadores.Count + 1;
+            this.jogadores.Add(jogador);
         }
     }
 }
