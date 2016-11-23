@@ -12,5 +12,10 @@
             this.Id = id;
             this.Nome = nome;
         }
+
+        public Jogador(string nome)
+        {
+            this.Nome = nome;
+        }
     }
 }
