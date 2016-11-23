@@ -31,13 +31,12 @@ namespace JogoDaForca
                       "~/Scripts/app/_start.js",
                       "~/Scripts/app/jogoDaForca.js",
                       "~/Scripts/app/telaInicial.js",
-                      "~/Scripts/app/telaPrincipal.js",
+                      "~/Scripts/app/telaJogo.js",
                       "~/Scripts/app/palavras.js",
-                      "~/Scripts/app/usuarios.js",
-                      "~/Scripts/app/jogadas.js",
-                      "~/Scripts/app/stringExtents.js",
-                      "~/Scripts/app/telaGameOver.js",
-                      "~/Scripts/app/telaSucesso.js"));
+                      "~/Scripts/app/jogadores.js",
+                      "~/Scripts/app/leaderboards.js",
+                      "~/Scripts/app/extents/stringExtents.js",
+                      "~/Scripts/app/extents/storageExtents.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
