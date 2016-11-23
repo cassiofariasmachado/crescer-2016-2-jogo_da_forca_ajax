@@ -6,7 +6,8 @@ namespace JogoDaForca.Dominio.Repositorios
     {
         Leaderboard Buscar(int id);
         void Inserir(Leaderboard leaderboard);
-        IEnumerable<Leaderboard> Listar(int pagina, int tamanhoPagina, Dificuldade? dificuldade = null);
+        IList<Leaderboard> Listar(int pagina, int tamanhoPagina);
+        IList<Leaderboard> Listar(int pagina, int tamanhoPagina, Dificuldade dificuldade);
         int ContarRegistros();
     }
 }
