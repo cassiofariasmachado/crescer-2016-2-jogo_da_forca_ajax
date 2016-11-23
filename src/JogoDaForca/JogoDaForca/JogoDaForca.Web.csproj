@@ -194,6 +194,7 @@
     <Content Include="Scripts\app\palavras.js" />
     <Content Include="Scripts\app\extents\storageExtents.js" />
     <Content Include="Scripts\app\telaInicial.js" />
+    <Content Include="Scripts\app\telaJogo.js" />
     <Content Include="Scripts\app\extents\stringExtents.js" />
     <Content Include="Scripts\app\jogadores.js" />
     <Content Include="Scripts\app\_start.js" />
